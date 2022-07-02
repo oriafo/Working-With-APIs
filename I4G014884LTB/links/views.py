@@ -1,26 +1,26 @@
 from django.shortcuts import render
-from django.views import generic        #importing generic class so we can use the ListView method.
+from rest_framework import generics
 from .models import Link
 from .serizliers import LinkSerializer
 
 # Create your views here.
-class PostListApi(generic.ListAPIView):
+class PostListApi(generics.ListAPIView):
     queryset = Link.objects.filter(active=True)
     serializer_class = LinkSerializer
 
-class PostCreateApi(generic.CreateAPIView):
+class PostCreateApi(generics.CreateAPIView):
     queryset = Link.objects.filter(active=True)
     serializer_class = LinkSerializer
 
-class PostDetailApi(generic.RetrieveAPIView):
+class PostDetailApi(generics.RetrieveAPIView):
     queryset = Link.objects.filter(active=True)
     serializer_class = LinkSerializer
 
-class PostUpdateApi(generic.UpdateAPIView):
-    queryset = Link.object.filter(active=True)
+class PostUpdateApi(generics.UpdateAPIView):
+    queryset = Link.objects.filter(active=True)
     serializer_class = LinkSerializer
 
-class PostDeleteApi(generic.DestroyAPIView):
+class PostDeleteApi(generics.DestroyAPIView):
     queryset= Link.objects.filter(active=True)
     serializer_class = LinkSerializer
 
