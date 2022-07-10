@@ -14,9 +14,9 @@ class Link(models.Model):
 
 
     def save(self, *args, **kwargs):
-        self.slug = slugify(self.target_url)
+        self.slug = slugify(self.identifier)
         super(Link, self).save(*args, **kwargs)
         pass 
 
     def __str__(self):
-        return self.target_url
+        return f"Short Url for: {self.target_url} is {self.identifier}"
