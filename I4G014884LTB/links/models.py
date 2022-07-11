@@ -13,10 +13,8 @@ class Link(models.Model):
 
 
     def save(self, *args, **kwargs):
-        if not id:
             self.slug = slugify(self.identifier)
             super(Link, self).save(*args, **kwargs)
-        else:
             pass 
 
     def __str__(self):
