@@ -13,7 +13,7 @@ class Link(models.Model):
 
 
     def save(self, *args, **kwargs):
-            self.slug = slugify(self.identifier)
+            self.identifier = slugify(self.target_url)
             super(Link, self).save(*args, **kwargs)
             pass 
 
