@@ -1,7 +1,6 @@
 from django.db import models
 from django.contrib.auth import get_user_model
 from django.template.defaultfilters import slugify
-from links.utils import generate_random_id
 
 class Link(models.Model):
     target_url = models.URLField(max_length=200)
